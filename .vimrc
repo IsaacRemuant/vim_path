@@ -89,10 +89,10 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 " later.  TODO_ , should check it's only for python.  C++ should compile and "
 " run and others should do other things."
 " The -B means it won't generate bytecode"
-au FileType python map <F5> :w <CR> :!start "python" -i -B % <CR>
-au FileType python map <F4> :w <CR> :!start "C:/python/x86/Python27/Scripts/ipython.exe" -i % <CR>
-au FileType python map <F6> :w <CR> :!start "c:/Program Files (x86)/Mozilla Firefox/firefox.exe" -new-tab http://localhost:8081 <CR>
-au FileType text map <F5> :ls <CR>
+au FileType python noremap <F5> :w <CR> :!start "python" -i -B % <CR>
+au FileType python noremap <F4> :w <CR> :!start "C:/python/x86/Python27/Scripts/ipython.exe" -i % <CR>
+au FileType python noremap <F6> :w <CR> :!start "c:/Program Files (x86)/Mozilla Firefox/firefox.exe" -new-tab http://localhost:8081 <CR>
+au FileType text noremap <F5> :ls <CR>
 "remove Scrollbars to the right and left.  Permanent and windowed"
 set go-=R
 set go-=L
@@ -138,11 +138,11 @@ let g:tex_flavor='latex'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tasklist tokesn "
-"map <leader>v <Plug>TaskList"
+"noremap <leader>v <Plug>TaskList"
 
 let mapleader = ","
 
-:map <leader>v <Plug>TaskList
+:noremap <leader>v <Plug>TaskList
 
 let g:tlWindowPosition = 1
 let g:tlRememberPosition = 1
@@ -195,8 +195,6 @@ autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""" FOOLING AROUND WITH VIMSCRIPT 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map - ddp
-map _ ddkkp
-
-
+noremap - ddp
+noremap _ ddkkp
 
