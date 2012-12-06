@@ -41,7 +41,6 @@
     
     call pathogen#infect()
     call pathogen#helptags()
-    call pathogen#runtime_append_all_bundles()
         "}
         
 " set colorscheme
@@ -136,17 +135,6 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tasklist tokesn "
-"noremap <leader>v <Plug>TaskList"
-
-let mapleader = ","
-
-:noremap <leader>v <Plug>TaskList
-
-let g:tlWindowPosition = 1
-let g:tlRememberPosition = 1
-let g:tlTokenList = ['TODO_', 'DECIDE_', 'TOKEN3']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Save folding state on file open/close "
 "au BufWinLeave * silent! mkview"
