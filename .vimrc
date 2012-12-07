@@ -2,6 +2,13 @@
 " VIM Configuration File"
 " Description: Work in progress.  Purpose is to maximize usability for c++
 " development, python and web development"
+" Target Languages: 
+" Tier_1:
+" c++, python, 
+" Tier_2:
+" html5, css, javascript
+" Tier_3:
+" latex
 " Author: Isaac Remuant"
 
 " Enviroment {
@@ -25,7 +32,7 @@
         set background=dark     " Assume a dark background
 
         syntax on
-        filetype indent plugin on
+        filetype indent plugin on                       " Enable plugins
 
 	set mouse=a					" automatically enable mouse usage
 
@@ -33,10 +40,11 @@
 	set virtualedit=onemore 	   	        " allow for cursor beyond last character
 	set history=1000  				" Store a ton of history (default is 20)
         " }
+        set wildignore=*.swp,*.bak,*pyc
+        
 " Pathogen {
     " Use pathogen to easily modify the runtime path to include all
     " plugins under the ~/.vim/bundle directory
-    set nocp " problemas con pathogen"
     set rtp+=D:/dropbox/tools/Sync/User/.vim/autoload
     
     call pathogen#infect()
@@ -71,7 +79,8 @@ au FileType python setlocal textwidth=79
 au FileType pascal setlocal softtabstop=2 shiftwidth=2
 "the difference being that the actual tab character is still eight columns wide (as specified by the python language), but using the tab key, backspace and indent/deindent ( keys) will correctly shift you by 4 spaces."
 
-
+let mapleader = '-'
+let maplocalleader = '\\'
 
 "for all python files.  Tab config"
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 autoindent foldmethod=indent 
@@ -143,7 +152,7 @@ let g:tex_flavor='latex'
 let MRU_File = expand("$VIM/.vim_mru_files")
 let MRU_Max_Entries = 1000
 "Window Height: default 8"
-let MRU_Window_Height = 8
+let MRU_Window_Height = 14
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let Tlist_Ctags_Cmd = expand('D:\Dropbox/tools/ctags58/ctags.exe')
@@ -153,20 +162,20 @@ set ofu=syntaxcomplete#Complete
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Syntax files for GLSL 400 and GLSL 330 " 
-command SetGLSLFileType call SetGLSLFileType()
-function SetGLSLFileType()
-  for item in getline(1,10)
-    if item =~ "#version 400"
-      execute ':set filetype=glsl400'
-      break
-    endif
-    if item =~ "#version 330"
-      execute ':set filetype=glsl330'
-      break
-    endif
-  endfor
-endfunction
-au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl SetGLSLFileType
+" command SetGLSLFileType call SetGLSLFileType()
+" function SetGLSLFileType()
+"   for item in getline(1,10)
+"     if item =~ "#version 400"
+"       execute ':set filetype=glsl400'
+"       break
+"     endif
+"     if item =~ "#version 330"
+"       execute ':set filetype=glsl330'
+"       break
+"     endif
+"   endfor
+" endfunction
+" au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl SetGLSLFileType
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pascal "
@@ -183,6 +192,31 @@ autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""" FOOLING AROUND WITH VIMSCRIPT 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap - ddp
-noremap _ ddkkp
+" insert mode: convert word to uppercase
+inoremap <c-u> <ESC>vbUeli
+" normal mode: convert word to uppercase
+nnoremap <c-u> viwU<ESC> 
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" map H to beginning of line
+nnoremap H ^
+" map L to end of line
+nnoremap L $
+
+" leave to ESC normal mode with jk
+inoremap jk <esc> 
+
+" LEARNING PROCESS DISABLE STUFF
+" force to use the new mapping no operation no operation
+inoremap <esc> <nop>
+
+" TODO disable arrow keys
+
+"""""""""" Abbrev 
+iabbrev @@m isaacremuant@gmail.com
+iabbrev @@n Isaac Remuant
+
+
 
