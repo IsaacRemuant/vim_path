@@ -31,7 +31,7 @@ def main():
         if not os.path.isdir(x):
             os.mkdir(x)
         # enter directory
-        commands = "".join(("cd ",x,";"))
+        commands = "".join(("cd ",x))
         print("run ",commands)
         os.system(commands)
 
