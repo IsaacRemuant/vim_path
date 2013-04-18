@@ -7,6 +7,8 @@ repos_dict = {
     "tcomment" : "https://github.com/tomtom/tcomment_vim.git",
     "mru" : "https://github.com/vim-scripts/mru.vim.git",
     "zencoding" : "https://github.com/mattn/zencoding-vim.git",
+    "fugitive" : "https://github.com/tpope/vim-fugitive.git",
+    "matchit" : "https://github.com/tsaleh/vim-matchit.git"
      }
 
 # [repos_dict["mru"][repos_dict["mru"].rfind("/")+1:] for x in repos
