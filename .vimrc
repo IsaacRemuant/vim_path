@@ -42,6 +42,7 @@ colorscheme desert
     set go-=r
 
 
+
     "Add permanent tab line.  This prevents docking issues with "
     "addition or removal of tabs"
     set showtabline=2
@@ -73,13 +74,34 @@ set autochdir
 
 " Language Specific Configurations {
 "   " I think it should be moved to .vim/after/ftplugin  
-    " C++ {
-    
+    " C++ (cpp) {
     " }
     " Python {
+      autocmd FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
         " if has("autocmd") 
         "     autocmd    
         " endif has("autocmd")
+    " }
+    " lua {
+            
+    " }
+    " javascript {
+
+    " }
+    " HTML {
+        
+    " }
+    " XML {
+        " treat rss/atom as xml
+        " autocmd BufNewFile, BufRead *.rss,*.atom setfiletype xml
+    " }
+    " css {
+        
+    " }
+
+    " Pascal {
+      autocmd FileType pascal setlocal ts=2 sts=2 sw=2 expandtab
+        
     " }
 " }
 
@@ -93,3 +115,40 @@ else
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
 endif
+
+" 
+" VIM CASTS
+nmap <leader>l :set list!<CR>
+
+" should do different chars for different OSes.  
+set listchars=tab:>\ ,eol:¬
+
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+  
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
