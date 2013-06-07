@@ -2,7 +2,7 @@
 " VIM Configuration File"
 " Description: Work in progress.  Purpose is to maximize usability for c++
 " development, python and web development"
-" Target Languages: 
+" Target Languages:
 " Tier_1:
 " c++, python, lua
 " Tier_2:
@@ -23,8 +23,8 @@
 
 " General {
     scriptencoding=utf-8
-	set virtualedit=onemore 	   	        " allow for cursor beyond last character
-	set history=1000  				" Store a ton of history (default is 20)
+    set virtualedit=onemore                 " allow for cursor beyond last character
+    set history=1000                " Store a ton of history (default is 20)
         " }
 
 set wildignore=*.swp,*.bak,*pyc
@@ -63,7 +63,7 @@ set shiftwidth=4
 set expandtab
 
 "Highlight Search"
-set hlsearch       
+set hlsearch
 
 "Sets the working directory to the path of the opened file"
 set autochdir
@@ -73,35 +73,35 @@ set autochdir
 "}
 
 " Language Specific Configurations {
-"   " I think it should be moved to .vim/after/ftplugin  
+"   " I think it should be moved to .vim/after/ftplugin
     " C++ (cpp) {
     " }
     " Python {
       autocmd FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
-        " if has("autocmd") 
-        "     autocmd    
+        " if has("autocmd")
+        "     autocmd
         " endif has("autocmd")
     " }
     " lua {
-            
+
     " }
     " javascript {
 
     " }
     " HTML {
-        
+
     " }
     " XML {
         " treat rss/atom as xml
         " autocmd BufNewFile, BufRead *.rss,*.atom setfiletype xml
     " }
     " css {
-        
+
     " }
 
     " Pascal {
       autocmd FileType pascal setlocal ts=2 sts=2 sw=2 expandtab
-        
+
     " }
 " }
 
@@ -111,16 +111,16 @@ inoremap jk <esc>
 if has('win32') || has('win64')
     nnoremap <leader>ev :vsplit $DROPBOX/tools/Sync/User/.vim/.vimrc<cr>
     nnoremap <leader>sv :source $DROPBOX/tools/Sync/User/.vim/.vimrc<cr>
-else 
+else
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
 endif
 
-" 
+"
 " VIM CASTS
 nmap <leader>l :set list!<CR>
 
-" should do different chars for different OSes.  
+" should do different chars for different OSes.
 set listchars=tab:>\ ,eol:¬
 
 
@@ -151,7 +151,7 @@ function! Stab()
   endif
   call SummarizeTabs()
 endfunction
-  
+
 function! SummarizeTabs()
   try
     echohl ModeMsg
@@ -167,4 +167,6 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
+
+
 
