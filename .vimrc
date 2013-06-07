@@ -124,6 +124,22 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:>\ ,eol:¬
 
 
+function! <SID>Preserve(command)
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    execute a:command
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+nnoremap <silent> <leader>$ :call <SID>Preserve("%s/\\s\\+$//e")<CR> 
+nnoremap <silent> <leader>= :call <SID>Preserve("normal gg=G")<CR> 
+
+
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()
