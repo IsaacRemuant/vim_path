@@ -124,6 +124,12 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:>\ ,eol:¬
 
 
+" Fold based on the syntax 
+setl foldmethod=syntax 
+
+
+
+
 function! <SID>Preserve(command)
     " Preparation: save last search, and cursor position.
     let _s=@/
