@@ -42,7 +42,6 @@ colorscheme desert
     set go-=r
 
 
-
     "Add permanent tab line.  This prevents docking issues with "
     "addition or removal of tabs"
     set showtabline=2
@@ -185,3 +184,19 @@ map <C-l> <C-w>l
 " map movements around tabs (simil Firefox)
 map <C-TAB> gt
 map <C-S-TAB> gT
+
+" TODO consider using C-<number> for selecting a specific tab
+" This won't work in terminal.  TODO: Find decent alternatives.
+" from C-1 to C-6 there will be representation problems.  
+" Probably need an alternative to Ctrl
+" map <C-1> 1gt
+" map <C-2> 2gt
+" map <C-3> 3gt
+" map <C-4> 4gt
+" map <C-5> 5gt
+" map <C-6> 6gt
+" map <C-7> 7gt
+" map <C-8> 8gt
+" map <C-9> 9gt
+" map <C-0> :tablast<CR>
+
