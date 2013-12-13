@@ -113,6 +113,8 @@ if has('win32') || has('win64')
 else
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
+    " Allow saving of files as sudo when I forgot to start vim using sudo.
+    cmap w!! w !sudo tee > /dev/null %
 endif
 
 "
