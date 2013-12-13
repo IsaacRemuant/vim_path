@@ -63,6 +63,7 @@ set expandtab
 
 "Highlight Search"
 set hlsearch
+set incsearch
 
 "Sets the working directory to the path of the opened file"
 set autochdir
