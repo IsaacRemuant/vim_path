@@ -77,7 +77,7 @@ set autochdir
     " C++ (cpp) {
     " }
     " Python {
-      autocmd FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
+      autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
         " if has("autocmd")
         "     autocmd
         " endif has("autocmd")
