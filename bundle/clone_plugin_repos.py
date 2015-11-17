@@ -10,6 +10,7 @@ repos_dict = {
 	"emmet (zencoding)" : "https://github.com/mattn/emmet-vim.git",
     "fugitive" : "https://github.com/tpope/vim-fugitive.git",
     # "matchit" : "https://github.com/tsaleh/vim-matchit.git"
+    "rust": "https://github.com/rust-lang/rust.vim.git",
      }
 
 # [repos_dict["mru"][repos_dict["mru"].rfind("/")+1:] for x in repos
