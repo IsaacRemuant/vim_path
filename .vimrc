@@ -109,8 +109,8 @@ set autochdir
 inoremap jk <esc>
 
 if has('win32') || has('win64')
-    nnoremap <leader>ev :vsplit $DROPBOX/tools/Sync/User/.vim/.vimrc<cr>
-    nnoremap <leader>sv :source $DROPBOX/tools/Sync/User/.vim/.vimrc<cr>
+    nnoremap <leader>ev :vsplit $HOME/.vim/.vimrc<cr>
+    nnoremap <leader>sv :source $HOME/.vim/.vimrc<cr>
 else
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
