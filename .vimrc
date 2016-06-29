@@ -118,6 +118,9 @@ else
     cmap w!! w !sudo tee > /dev/null %
 endif
 
+" requires xmllint found in libxml2-utils package for Ubuntu
+nmap <leader>f :%!xmllint --format %<cr>
+
 "
 " VIM CASTS
 nmap <leader>l :set list!<CR>
@@ -203,3 +206,5 @@ map <C-S-TAB> gT
 " map <C-9> 9gt
 " map <C-0> :tablast<CR>
 
+" Wrap lines in a soft way (not with setwidth
+set wrap linebreak nolist
