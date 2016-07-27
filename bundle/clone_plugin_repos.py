@@ -11,6 +11,10 @@ repos_dict = {
     "fugitive" : "https://github.com/tpope/vim-fugitive.git",
     # "matchit" : "https://github.com/tsaleh/vim-matchit.git"
     "rust": "https://github.com/rust-lang/rust.vim.git",
+    "a.vim": "https://github.com/vim-scripts/a.vim.git",
+    "nerdtree": "https://github.com/scrooloose/nerdtree.git",
+    "ctrlp": "https://github.com/kien/ctrlp.vim.git",
+    "python-mode": "https://github.com/klen/python-mode.git",
      }
 
 # [repos_dict["mru"][repos_dict["mru"].rfind("/")+1:] for x in repos

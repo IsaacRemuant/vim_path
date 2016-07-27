@@ -11,7 +11,6 @@
 " latex
 " Author: Isaac Remuant"
 
-
 " Enviroment {
     " Disable vi compatibility (emulation of old bugs) (many undos with this)
     set nocompatible
@@ -30,6 +29,7 @@
 set wildignore=*.swp,*.bak,*pyc
 
 execute pathogen#infect()
+execute pathogen#helptags()
 syntax on
 filetype plugin indent on
 syntax on
@@ -107,6 +107,11 @@ set autochdir
 
 
 inoremap jk <esc>
+vnoremap jk <esc>
+
+" Temporary tactic to underline ReStructuredText 
+map <leader>t <S-v>yp<S-v>r-
+map <leader>T <S-v>yp<S-v>r-<S-v>ykkp
 
 if has('win32') || has('win64')
     nnoremap <leader>ev :vsplit $HOME/.vim/.vimrc<cr>
@@ -125,6 +130,11 @@ nmap <leader>f :%!xmllint --format %<cr>
 " VIM CASTS
 nmap <leader>l :set list!<CR>
 
+" map <C-C> "+y
+" map <C-V> "+p Clashes with 
+" visual select
+
+
 " should do different chars for different OSes.
 set listchars=tab:>\ ,eol:¬
 
@@ -132,6 +142,13 @@ set listchars=tab:>\ ,eol:¬
 " Fold based on the syntax 
 setl foldmethod=syntax 
 
+" python mode
+
+" Extended autocompletion (rope could complete objects which have not been
+" imported) from project                              *'g:pymode_rope_autoimport'*
+let g:pymode_rope_autoimport = 0
+" closes the scratch window
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
 
 
