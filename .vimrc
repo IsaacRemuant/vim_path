@@ -77,6 +77,7 @@ set autochdir
     " C++ (cpp) {
     " }
     " Python {
+      au BufNewFile,BufRead *.h.gen set filetype=python
       autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
         " if has("autocmd")
         "     autocmd
