@@ -203,14 +203,15 @@ endfunction
 
 
 " move around windows without pressing ctrl-w <key>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
+map <C-h> <C-w>h map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " map movements around tabs (simil Firefox)
 map <C-TAB> gt
 map <C-S-TAB> gT
+map <C-k> gt     
+map <C-j> gT     
 
 " TODO consider using C-<number> for selecting a specific tab
 " This won't work in terminal.  TODO: Find decent alternatives.
