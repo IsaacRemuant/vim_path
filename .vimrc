@@ -230,3 +230,6 @@ map <C-j> gT
 
 " Wrap lines in a soft way (not with setwidth
 set wrap linebreak nolist
+
+let MRU_Max_Entries = 1000
+
