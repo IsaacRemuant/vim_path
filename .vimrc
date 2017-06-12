@@ -233,3 +233,5 @@ set wrap linebreak nolist
 
 let MRU_Max_Entries = 1000
 
+runtime macros/matchit.vim
+
