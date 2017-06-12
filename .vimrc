@@ -26,7 +26,7 @@
     set history=1000                " Store a ton of history (default is 20)
         " }
 
-set wildignore=*.swp,*.bak,*pyc
+set wildignore=*.swp,*.bak,*.pyc
 
 execute pathogen#infect()
 execute pathogen#helptags()
