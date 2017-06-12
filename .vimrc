@@ -148,6 +148,8 @@ setl foldmethod=syntax
 " Extended autocompletion (rope could complete objects which have not been
 " imported) from project                              *'g:pymode_rope_autoimport'*
 let g:pymode_rope_autoimport = 0
+" W0401 ignore star imports
+let g:pymode_lint_ignore = "E501,E111,E114,W0401"
 " closes the scratch window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
