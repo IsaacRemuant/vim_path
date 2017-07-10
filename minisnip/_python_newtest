@@ -1,0 +1,19 @@
+import unittest
+from parameterized import parameterized
+
+
+def solution(A):
+    return None
+
+
+class TestSomething(unittest.TestCase):
+    @parameterized.expand([
+        ("confirmed", 1, 1),
+    ])
+    def test_numbers(self, name, a, expected):
+        result = solution(a)
+        self.assertEqual(expected, result)
+
+
+if __name__ == "__main__":
+    unittest.main()
