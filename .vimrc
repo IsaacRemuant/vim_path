@@ -104,6 +104,10 @@ set autochdir
       autocmd FileType pascal setlocal ts=2 sts=2 sw=2 expandtab
 
     " }
+    "
+    " Markdown {
+      au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+    " }
 " }
 
 
@@ -234,4 +238,5 @@ set wrap linebreak nolist
 let MRU_Max_Entries = 1000
 
 runtime macros/matchit.vim
+
 
